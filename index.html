@@ -1,0 +1,1035 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Orla Central – Niterói | Cury Construtora</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --gold: #C9A84C;
+    --gold-light: #E8C97A;
+    --navy: #0D1B2A;
+    --navy-mid: #1A2E42;
+    --cream: #F7F3EC;
+    --white: #FFFFFF;
+    --text-dark: #0D1B2A;
+    --text-muted: #6B7A8D;
+    --accent: #2E7D5E;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--navy);
+    color: var(--white);
+    overflow-x: hidden;
+  }
+
+  /* ── NAVBAR ── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 1rem 3rem;
+    background: rgba(13,27,42,0.85);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(201,168,76,0.2);
+  }
+  .nav-logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem; font-weight: 700;
+    color: var(--gold);
+    letter-spacing: 0.05em;
+  }
+  .nav-logo span { color: var(--white); font-weight: 400; }
+  .nav-cta {
+    background: var(--gold);
+    color: var(--navy);
+    padding: 0.6rem 1.5rem;
+    border: none; border-radius: 2px;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 600; font-size: 0.85rem;
+    letter-spacing: 0.08em; text-transform: uppercase;
+    cursor: pointer; text-decoration: none;
+    transition: background 0.2s, transform 0.15s;
+  }
+  .nav-cta:hover { background: var(--gold-light); transform: translateY(-1px); }
+
+  /* ── HERO ── */
+  .hero {
+    min-height: 100vh;
+    background:
+      linear-gradient(to bottom, rgba(13,27,42,0.55) 0%, rgba(13,27,42,0.75) 60%, rgba(13,27,42,1) 100%),
+      url('orla4.jpg') center/cover no-repeat;
+    display: flex; flex-direction: column; justify-content: flex-end;
+    padding: 0 3rem 6rem;
+    position: relative;
+  }
+  .hero-badge {
+    display: inline-block;
+    background: var(--gold);
+    color: var(--navy);
+    font-size: 0.7rem; font-weight: 700;
+    letter-spacing: 0.15em; text-transform: uppercase;
+    padding: 0.35rem 1rem;
+    margin-bottom: 1.5rem;
+  }
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(3rem, 7vw, 6rem);
+    font-weight: 900; line-height: 1.0;
+    letter-spacing: -0.01em;
+    margin-bottom: 0.3rem;
+  }
+  .hero h1 em {
+    font-style: italic;
+    color: var(--gold);
+    display: block;
+  }
+  .hero-sub {
+    font-size: 1rem; color: rgba(255,255,255,0.7);
+    font-weight: 300; letter-spacing: 0.08em; text-transform: uppercase;
+    margin-bottom: 2.5rem;
+  }
+  .hero-pills {
+    display: flex; gap: 0.75rem; flex-wrap: wrap;
+    margin-bottom: 3rem;
+  }
+  .pill {
+    border: 1px solid rgba(201,168,76,0.5);
+    color: var(--gold-light);
+    padding: 0.4rem 1rem;
+    border-radius: 20px;
+    font-size: 0.8rem; font-weight: 500;
+    letter-spacing: 0.04em;
+  }
+  .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; align-items: center; }
+  .btn-primary {
+    background: var(--gold);
+    color: var(--navy);
+    padding: 1rem 2.5rem;
+    border: none; border-radius: 2px;
+    font-weight: 700; font-size: 0.9rem;
+    letter-spacing: 0.08em; text-transform: uppercase;
+    cursor: pointer; text-decoration: none; display: inline-block;
+    transition: background 0.2s, transform 0.15s;
+  }
+  .btn-primary:hover { background: var(--gold-light); transform: translateY(-2px); }
+  .btn-whatsapp {
+    display: flex; align-items: center; gap: 0.6rem;
+    color: #25D366; border: 1px solid rgba(37,211,102,0.4);
+    padding: 1rem 2rem; border-radius: 2px;
+    font-weight: 600; font-size: 0.9rem;
+    cursor: pointer; text-decoration: none;
+    transition: background 0.2s;
+  }
+  .btn-whatsapp:hover { background: rgba(37,211,102,0.1); }
+  .wa-icon { width: 20px; height: 20px; fill: #25D366; }
+
+  /* ── URGENCY BAR ── */
+  .urgency-bar {
+    background: var(--gold);
+    color: var(--navy);
+    text-align: center;
+    padding: 0.8rem 2rem;
+    font-weight: 700; font-size: 0.85rem;
+    letter-spacing: 0.06em; text-transform: uppercase;
+  }
+
+  /* ── SECTION BASE ── */
+  section { padding: 6rem 3rem; }
+  .section-label {
+    font-size: 0.7rem; font-weight: 700;
+    letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.75rem;
+  }
+  h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    font-weight: 700; line-height: 1.15;
+  }
+
+  /* ── ABOUT ── */
+  .about { background: var(--cream); color: var(--text-dark); }
+  .about .section-label { color: var(--accent); }
+  .about-grid {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 5rem; align-items: center; margin-top: 3rem;
+  }
+  .about-text p {
+    font-size: 1.05rem; line-height: 1.8;
+    color: #3A4A5C; margin-top: 1.5rem;
+  }
+  .about-img {
+    aspect-ratio: 4/5;
+    background: url('orla1.jpg') center/cover no-repeat;
+    border-radius: 2px;
+    position: relative;
+  }
+  .about-img::after {
+    content: 'Foto Ilustrativa';
+    position: absolute; bottom: 1rem; right: 1rem;
+    font-size: 0.65rem; color: rgba(255,255,255,0.6);
+    letter-spacing: 0.1em;
+  }
+  .about-numbers {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 1.5rem; margin-top: 2.5rem;
+  }
+  .num-card {
+    background: var(--white);
+    border-left: 3px solid var(--gold);
+    padding: 1.25rem 1.5rem;
+  }
+  .num-card .number {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem; font-weight: 700;
+    color: var(--navy);
+  }
+  .num-card .num-label {
+    font-size: 0.8rem; color: var(--text-muted);
+    font-weight: 500; margin-top: 0.25rem;
+    text-transform: uppercase; letter-spacing: 0.06em;
+  }
+
+  /* ── LOCALIZAÇÃO ── */
+  .location { background: var(--navy-mid); }
+  .location-grid {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 4rem; align-items: start; margin-top: 3rem;
+  }
+  .loc-item {
+    display: flex; align-items: flex-start; gap: 1.2rem;
+    padding: 1.5rem 0;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+  .loc-icon {
+    width: 44px; height: 44px; flex-shrink: 0;
+    background: rgba(201,168,76,0.12);
+    border: 1px solid rgba(201,168,76,0.3);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.2rem;
+  }
+  .loc-item h4 { font-size: 0.95rem; font-weight: 600; }
+  .loc-item p { font-size: 0.85rem; color: rgba(255,255,255,0.55); margin-top: 0.2rem; }
+  .map-placeholder {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(201,168,76,0.2);
+    border-radius: 2px;
+    height: 380px;
+    display: flex; align-items: center; justify-content: center;
+    flex-direction: column; gap: 1rem;
+    color: rgba(255,255,255,0.4);
+    font-size: 0.85rem;
+  }
+  .map-pin { font-size: 2.5rem; }
+
+  /* ── LAZER ── */
+  .amenities { background: var(--cream); color: var(--text-dark); }
+  .amenities .section-label { color: var(--accent); }
+  .amenities-intro { font-size: 1.05rem; color: #3A4A5C; margin-top: 1rem; max-width: 600px; }
+  .amenities-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 1px; margin-top: 3rem;
+    background: rgba(0,0,0,0.1);
+    border: 1px solid rgba(0,0,0,0.1);
+  }
+  .amenity-item {
+    background: var(--white);
+    padding: 1.5rem 1.25rem;
+    display: flex; flex-direction: column; align-items: center;
+    gap: 0.6rem; text-align: center;
+  }
+  .amenity-item .icon { font-size: 1.6rem; }
+  .amenity-item span {
+    font-size: 0.78rem; font-weight: 600;
+    color: var(--navy); letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
+  /* ── PLANTAS ── */
+  .plants { background: var(--navy); }
+  .plants-gallery {
+    margin-top: 2rem;
+  }
+  .plants-gallery .grid {
+    display: grid; gap: 0.75rem;
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    margin-top: 0.75rem;
+  }
+  .plants-gallery img { width: 100%; height: 200px; object-fit: cover; border-radius: 4px; display: block; }
+  /* Carrossel horizontal para plantas */
+  .plants-carousel {
+    display: flex;
+    gap: 0.75rem;
+    overflow-x: auto;
+    padding: 0.75rem 0.25rem;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x mandatory;
+    margin-top: 1rem;
+  }
+  .plants-carousel img {
+    flex: 0 0 auto;
+    width: min(680px, 90%);
+    height: 380px;
+    object-fit: cover;
+    border-radius: 6px;
+    scroll-snap-align: center;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+  }
+  .decorado-video { margin-top: 1.5rem; display:flex; flex-direction:column; gap:0.75rem; align-items:center; }
+  .decorado-video iframe { width:100%; max-width:900px; height:506px; border:0; border-radius:4px; }
+  .perspectives-grid { display:grid; gap:0.5rem; grid-template-columns: repeat(auto-fill, minmax(180px,1fr)); margin-top:1.25rem; }
+  .perspectives-grid img { width:100%; height:160px; object-fit:cover; border-radius:4px; display:block; }
+  .carousel-wrap { position: relative; }
+  .carousel-arrow {
+    position: absolute; top: 50%; transform: translateY(-50%);
+    background: rgba(0,0,0,0.45); color: #fff; border: none; width:44px; height:44px; border-radius:50%;
+    display:flex; align-items:center; justify-content:center; font-size:1.6rem; cursor:pointer; z-index:30;
+    transition: background 0.15s;
+  }
+  .carousel-arrow:hover { background: rgba(0,0,0,0.6); }
+  .carousel-arrow.left { left: 8px; }
+  .carousel-arrow.right { right: 8px; }
+  .plants-tabs {
+    display: flex; gap: 0; margin-top: 2.5rem;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+  }
+  .tab-btn {
+    background: none; border: none;
+    color: rgba(255,255,255,0.5);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.9rem; font-weight: 500;
+    padding: 0.75rem 2rem; cursor: pointer;
+    border-bottom: 2px solid transparent;
+    transition: all 0.2s;
+  }
+  .tab-btn.active {
+    color: var(--gold);
+    border-bottom-color: var(--gold);
+  }
+  .plant-card {
+    margin-top: 3rem;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;
+  }
+  .plant-img {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(201,168,76,0.15);
+    aspect-ratio: 1; border-radius: 2px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 0.8rem; color: rgba(255,255,255,0.3); flex-direction: column; gap: 0.5rem;
+  }
+  .plant-img svg { opacity: 0.25; }
+  .plant-info h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.2rem; font-weight: 700; color: var(--gold);
+  }
+  .plant-info h4 {
+    font-size: 0.8rem; letter-spacing: 0.15em; text-transform: uppercase;
+    color: rgba(255,255,255,0.5); margin-top: 0.4rem;
+  }
+  .plant-specs { margin-top: 2rem; display: flex; flex-direction: column; gap: 0.75rem; }
+  .spec-row {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid rgba(255,255,255,0.07);
+    font-size: 0.9rem;
+  }
+  .spec-row .spec-val { font-weight: 600; color: var(--gold-light); }
+
+  /* ── PREÇOS ── */
+  .prices { background: var(--navy-mid); }
+  .prices-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.5rem; margin-top: 3rem;
+  }
+  .price-card {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(201,168,76,0.2);
+    padding: 2rem; position: relative;
+    transition: border-color 0.2s, transform 0.2s;
+  }
+  .price-card:hover { border-color: var(--gold); transform: translateY(-4px); }
+  .price-card.featured {
+    border-color: var(--gold);
+    background: rgba(201,168,76,0.06);
+  }
+  .featured-tag {
+    position: absolute; top: -1px; right: 1.5rem;
+    background: var(--gold); color: var(--navy);
+    font-size: 0.65rem; font-weight: 700;
+    letter-spacing: 0.12em; text-transform: uppercase;
+    padding: 0.3rem 0.8rem;
+  }
+  .price-card h3 {
+    font-size: 0.8rem; font-weight: 600;
+    letter-spacing: 0.15em; text-transform: uppercase;
+    color: rgba(255,255,255,0.5);
+  }
+  .price-value {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem; font-weight: 700; color: var(--white);
+    margin-top: 0.5rem;
+  }
+  .price-note {
+    font-size: 0.75rem; color: rgba(255,255,255,0.4); margin-top: 0.25rem;
+  }
+  .price-features { margin-top: 1.5rem; display: flex; flex-direction: column; gap: 0.6rem; }
+  .pf { display: flex; align-items: center; gap: 0.5rem; font-size: 0.85rem; color: rgba(255,255,255,0.7); }
+  .pf::before { content: ''; width: 6px; height: 6px; background: var(--gold); border-radius: 50%; flex-shrink: 0; }
+  .cta-price {
+    display: block; text-align: center; margin-top: 1.75rem;
+    background: var(--gold); color: var(--navy);
+    padding: 0.85rem; font-weight: 700; font-size: 0.85rem;
+    letter-spacing: 0.08em; text-transform: uppercase;
+    text-decoration: none; cursor: pointer; border: none; width: 100%;
+    transition: background 0.2s;
+  }
+  .cta-price:hover { background: var(--gold-light); }
+
+  /* ── PAGAMENTO ── */
+  .payment { background: var(--navy); }
+  .payment-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 2rem; margin-top: 3rem;
+  }
+  .pay-card {
+    border-left: 2px solid var(--gold);
+    padding: 0 0 0 1.5rem;
+  }
+  .pay-card .pay-icon { font-size: 1.8rem; margin-bottom: 0.75rem; }
+  .pay-card h4 { font-size: 1rem; font-weight: 600; margin-bottom: 0.4rem; }
+  .pay-card p { font-size: 0.875rem; color: rgba(255,255,255,0.55); line-height: 1.6; }
+
+  /* ── SOBRE NITERÓI ── */
+  .niteroi {
+    background: var(--cream); color: var(--text-dark);
+    position: relative; overflow: hidden;
+  }
+  .niteroi .section-label { color: var(--accent); }
+  .niteroi-inner {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center;
+  }
+  .niteroi-img {
+    aspect-ratio: 3/2;
+    background: url('scidade.jpg') center/cover;
+    border-radius: 2px;
+  }
+  .niteroi-text p {
+    font-size: 1rem; line-height: 1.85; color: #3A4A5C; margin-top: 1.25rem;
+  }
+
+  /* ── FORM SECTION ── */
+  .contact { background: var(--navy-mid); }
+  .contact-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start;
+  }
+  .contact-info h2 { color: var(--white); }
+  .contact-info p { font-size: 1rem; color: rgba(255,255,255,0.6); margin-top: 1rem; line-height: 1.7; }
+  .contact-perks { margin-top: 2rem; display: flex; flex-direction: column; gap: 1rem; }
+  .perk { display: flex; align-items: center; gap: 0.75rem; font-size: 0.9rem; color: rgba(255,255,255,0.75); }
+  .perk-dot { width: 8px; height: 8px; background: var(--gold); border-radius: 50%; flex-shrink: 0; }
+
+  form { display: flex; flex-direction: column; gap: 1rem; }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+  input, select, textarea {
+    width: 100%;
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 2px;
+    padding: 0.875rem 1rem;
+    color: var(--white);
+    font-family: 'DM Sans', sans-serif; font-size: 0.9rem;
+    transition: border-color 0.2s;
+  }
+  input::placeholder, textarea::placeholder { color: rgba(255,255,255,0.35); }
+  input:focus, select:focus, textarea:focus {
+    outline: none; border-color: var(--gold);
+  }
+  select { appearance: none; cursor: pointer; }
+  select option { background: var(--navy-mid); color: var(--white); }
+  textarea { resize: vertical; min-height: 100px; }
+  .submit-btn {
+    background: var(--gold); color: var(--navy);
+    padding: 1rem; border: none; border-radius: 2px;
+    font-weight: 700; font-size: 0.9rem;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    cursor: pointer; transition: background 0.2s;
+    font-family: 'DM Sans', sans-serif;
+  }
+  .submit-btn:hover { background: var(--gold-light); }
+  .form-disclaimer { font-size: 0.72rem; color: rgba(255,255,255,0.3); text-align: center; margin-top: 0.5rem; }
+
+  /* ── FOOTER ── */
+  footer {
+    background: #060E16;
+    padding: 3rem;
+    border-top: 1px solid rgba(201,168,76,0.15);
+  }
+  .footer-top {
+    display: flex; justify-content: space-between; align-items: flex-start;
+    padding-bottom: 2rem; border-bottom: 1px solid rgba(255,255,255,0.06);
+  }
+  .footer-brand { font-family: 'Playfair Display', serif; font-size: 1.3rem; color: var(--gold); }
+  .footer-brand span { color: rgba(255,255,255,0.5); font-weight: 400; font-size: 0.8rem; display: block; margin-top: 0.25rem; }
+  .footer-links { display: flex; gap: 3rem; }
+  .footer-col h5 { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.4); margin-bottom: 1rem; }
+  .footer-col a { display: block; font-size: 0.85rem; color: rgba(255,255,255,0.6); text-decoration: none; margin-bottom: 0.5rem; transition: color 0.2s; }
+  .footer-col a:hover { color: var(--gold); }
+  .footer-bottom { margin-top: 2rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: gap; }
+  .footer-legal { font-size: 0.72rem; color: rgba(255,255,255,0.25); line-height: 1.6; max-width: 700px; }
+  .footer-wa {
+    display: flex; align-items: center; gap: 0.5rem;
+    background: #25D366; color: #fff;
+    padding: 0.7rem 1.5rem; border-radius: 2px;
+    text-decoration: none; font-weight: 600; font-size: 0.85rem;
+    white-space: nowrap; flex-shrink: 0;
+  }
+
+  /* ── STICKY WA ── */
+  .sticky-wa {
+    position: fixed; bottom: 2rem; right: 2rem; z-index: 200;
+    display: flex; align-items: center; gap: 0.75rem;
+    background: #25D366; color: #fff;
+    padding: 0.85rem 1.5rem; border-radius: 40px;
+    text-decoration: none; font-weight: 700; font-size: 0.85rem;
+    box-shadow: 0 8px 30px rgba(37,211,102,0.35);
+    animation: pulse 2.5s ease-in-out infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { box-shadow: 0 8px 30px rgba(37,211,102,0.35); }
+    50% { box-shadow: 0 8px 40px rgba(37,211,102,0.6); }
+  }
+
+  /* ── ANIMATIONS ── */
+  .fade-up {
+    opacity: 0; transform: translateY(30px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+  .fade-up.visible { opacity: 1; transform: none; }
+
+  @media (max-width: 768px) {
+    nav { padding: 1rem 1.5rem; }
+    section { padding: 4rem 1.5rem; }
+    .hero { padding: 0 1.5rem 4rem; }
+    .hero h1 { font-size: 2.8rem; }
+    .about-grid, .location-grid, .plant-card, .niteroi-inner, .contact-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+    .about-img { aspect-ratio: 4/3; }
+    .plants-tabs { overflow-x: auto; }
+    .footer-top { flex-direction: column; gap: 2rem; }
+    .footer-links { flex-direction: column; gap: 1.5rem; }
+    .footer-bottom { flex-direction: column; gap: 1.5rem; }
+    .sticky-wa span { display: none; }
+    .sticky-wa { padding: 1rem; border-radius: 50%; }
+    .form-row { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">ORLA <span>Central · Niterói</span></div>
+  <a href="#contato" class="nav-cta">Falar com Corretor</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-badge">Lançamento 2026 · Cury Construtora</div>
+  <h1>Orla<em>Central</em></h1>
+  <p class="hero-sub">Caminho Niemeyer · Centro de Niterói</p>
+  <div class="hero-pills">
+    <div class="pill">1, 2 e 3 Quartos</div>
+    <div class="pill">Varanda em Todos</div>
+    <div class="pill">Lazer com Rooftop</div>
+    <div class="pill">Vista para a Baía</div>
+    <div class="pill">Barcas a 5 min</div>
+  </div>
+  <div class="hero-actions">
+    <a href="#contato" class="btn-primary">Quero Saber Mais</a>
+    <a href="https://wa.me/5521985653880?text=Olá!%20Tenho%20interesse%20no%20Orla%20Central%20em%20Niterói." target="_blank" class="btn-whatsapp">
+      <svg class="wa-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      WhatsApp
+    </a>
+  </div>
+</section>
+
+<!-- URGENCY -->
+<div class="urgency-bar">
+  ⚠ Unidades com vista para a Baía são limitadas — Abertura de vendas: 05.05.2026
+</div>
+
+<!-- SOBRE -->
+<section class="about" id="sobre">
+  <div class="section-label">Sobre o Empreendimento</div>
+  <div class="about-grid">
+    <div class="about-text fade-up">
+      <h2>O endereço mais<br>icônico de Niterói</h2>
+      <p>O Orla Central é o lançamento mais aguardado de 2026. Localizado no <strong>Caminho Niemeyer</strong>, em frente à Baía de Guanabara, o empreendimento une arquitetura contemporânea, localização estratégica e vista privilegiada para os cartões-postais do Rio de Janeiro.</p>
+      <p>Apartamentos de 1, 2 e 3 quartos com varanda, opção de suíte e lazer completo com rooftop — tudo isso em um dos pontos de maior valorização da Cidade Sorriso.</p>
+      <div class="about-numbers">
+        <div class="num-card">
+          <div class="number">3</div>
+          <div class="num-label">Tipologias de planta</div>
+        </div>
+        <div class="num-card">
+          <div class="number">100%</div>
+          <div class="num-label">Com varanda</div>
+        </div>
+        <div class="num-card">
+          <div class="number">5 min</div>
+          <div class="num-label">das Barcas</div>
+        </div>
+        <div class="num-card">
+          <div class="number">Rooftop</div>
+          <div class="num-label">Vista panorâmica</div>
+        </div>
+      </div>
+    </div>
+    <div class="about-img fade-up"></div>
+  </div>
+</section>
+
+<!-- LOCALIZAÇÃO -->
+<section class="location" id="localizacao">
+  <div class="section-label">Localização</div>
+  <h2>No coração pulsante<br>de Niterói</h2>
+  <div class="location-grid">
+    <div class="fade-up">
+      <div class="loc-item">
+        <div class="loc-icon">⛴</div>
+        <div>
+          <h4>Barcas a 5 minutos</h4>
+          <p>Chegue ao Rio de Janeiro com rapidez, evitando o trânsito da ponte</p>
+        </div>
+      </div>
+      <div class="loc-item">
+        <div class="loc-icon">🎨</div>
+        <div>
+          <h4>Caminho Niemeyer</h4>
+          <p>Em frente ao complexo arquitetônico e cultural mais icônico da cidade</p>
+        </div>
+      </div>
+      <div class="loc-item">
+        <div class="loc-icon">🎓</div>
+        <div>
+          <h4>Próximo à UFF</h4>
+          <p>Hub universitário e comercial a poucos passos do empreendimento</p>
+        </div>
+      </div>
+      <div class="loc-item">
+        <div class="loc-icon">🛍</div>
+        <div>
+          <h4>Plaza Shopping</h4>
+          <p>Toda a conveniência e gastronomia do melhor shopping de Niterói</p>
+        </div>
+      </div>
+      <div class="loc-item">
+        <div class="loc-icon">🚗</div>
+        <div>
+          <h4>Av. Visconde do Rio Branco</h4>
+          <p>Fácil acesso às principais vias da cidade e região metropolitana</p>
+        </div>
+      </div>
+    </div>
+    <div class="map-placeholder fade-up">
+      <div class="map-pin">📍</div>
+      <div>Orla Central · Caminho Niemeyer</div>
+      <div style="font-size:0.75rem; opacity:0.6;">Centro, Niterói – RJ</div>
+    </div>
+  </div>
+</section>
+
+<!-- LAZER -->
+<section class="amenities" id="lazer">
+  <div class="section-label">Lazer</div>
+  <h2>Padrão Resort no<br>Centro de Niterói</h2>
+  <p class="amenities-intro">Um complexo completo de entretenimento, saúde e convivência — sem precisar sair do condomínio.</p>
+  <div class="amenities-grid fade-up">
+    <div class="amenity-item"><div class="icon">🏊</div><span>Piscina</span></div>
+    <div class="amenity-item"><div class="icon">🌅</div><span>Rooftop</span></div>
+    <div class="amenity-item"><div class="icon">🏋️</div><span>Academia</span></div>
+    <div class="amenity-item"><div class="icon">🎉</div><span>Salão de Festas</span></div>
+    <div class="amenity-item"><div class="icon">🍖</div><span>Churrasqueira</span></div>
+    <div class="amenity-item"><div class="icon">🧸</div><span>Playground</span></div>
+    <div class="amenity-item"><div class="icon">🐾</div><span>Pet Place</span></div>
+    <div class="amenity-item"><div class="icon">🐕</div><span>Pet Care</span></div>
+    <div class="amenity-item"><div class="icon">🎮</div><span>Salão de Jogos</span></div>
+    <div class="amenity-item"><div class="icon">👨‍💻</div><span>Coworking</span></div>
+    <div class="amenity-item"><div class="icon">🧺</div><span>Lavanderia</span></div>
+    <div class="amenity-item"><div class="icon">🌿</div><span>Horta</span></div>
+    <div class="amenity-item"><div class="icon">🎾</div><span>Beach Tennis</span></div>
+    <div class="amenity-item"><div class="icon">🛒</div><span>Easy Market</span></div>
+    <div class="amenity-item"><div class="icon">🧘</div><span>Sala Zen</span></div>
+    <div class="amenity-item"><div class="icon">🧒</div><span>Brinquedoteca</span></div>
+    <div class="amenity-item"><div class="icon">🚲</div><span>Bicicletário</span></div>
+    <div class="amenity-item"><div class="icon">🔧</div><span>Oficina</span></div>
+  </div>
+</section>
+
+<!-- PLANTAS -->
+<section class="plants" id="plantas">
+  <!-- Vídeo do decorado (2 quartos) colocado antes do título de Plantas -->
+  <div class="decorado-video fade-up">
+    <h3 style="color:var(--white);">Tour do Decorado — 2 Quartos</h3>
+    <iframe src="https://www.youtube.com/embed/K0IbWSEQQeY" title="Tour do decorado 2 quartos" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+  </div>
+  <div class="section-label">Plantas</div>
+  <h2>Escolha a sua<br>tipologia ideal</h2>
+  <div class="plants-tabs">
+    <button class="tab-btn active" onclick="showPlant(0, this)">1 Quarto</button>
+    <button class="tab-btn" onclick="showPlant(1, this)">2 Quartos Padrão</button>
+    <button class="tab-btn" onclick="showPlant(2, this)">2 Quartos Suíte</button>
+    <button class="tab-btn" onclick="showPlant(3, this)">3 Quartos Suíte</button>
+  </div>
+  <div id="plant-display" class="plant-card fade-up">
+    <!-- Carrossel horizontal unificado de plantas (com setas) -->
+    <div class="carousel-wrap">
+      <button class="carousel-arrow left" aria-label="Anterior">‹</button>
+      <div class="plants-carousel" id="plantsCarousel" aria-label="Carrossel de Plantas">
+        <img src="planta0.jpg" alt="Planta 0">
+        <img src="planta1.jpg" alt="Planta 1">
+        <img src="planta2.jpg" alt="Planta 2">
+        <img src="planta3.jpg" alt="Planta 3">
+        <img src="planta4.jpg" alt="Planta 4">
+        <img src="planta5.jpg" alt="Planta 5">
+        <img src="planta6.jpg" alt="Planta 6">
+        <img src="planta7.jpg" alt="Planta 7">
+        <img src="planta8.jpg" alt="Planta 8">
+      </div>
+      <button class="carousel-arrow right" aria-label="Próximo">›</button>
+    </div>
+
+    
+    <div class="plant-info">
+      <h4 id="plant-type">1 DORMITÓRIO</h4>
+      <h3 id="plant-price">R$ 322.000</h3>
+      <div class="plant-specs" id="plant-specs">
+        <div class="spec-row"><span>Dormitório</span><span class="spec-val">1 quarto</span></div>
+        <div class="spec-row"><span>Varanda</span><span class="spec-val">Inclusa</span></div>
+        <div class="spec-row"><span>Vaga</span><span class="spec-val">Não inclusa</span></div>
+        <div class="spec-row"><span>Suíte</span><span class="spec-val">Não inclusa</span></div>
+        <div class="spec-row"><span>Condições</span><span class="spec-val">Entrada parcelada</span></div>
+      </div>
+      <a href="#contato" class="btn-primary" style="display:inline-block;margin-top:2rem;font-size:0.85rem;padding:0.9rem 2rem;">Tenho Interesse</a>
+    </div>
+  </div>
+</section>
+
+<!-- PREÇOS -->
+<section class="prices" id="precos">
+  <div class="section-label">Investimento</div>
+  <h2>Preços de pré-lançamento<br>com maior potencial</h2>
+  <div class="prices-grid fade-up">
+    <div class="price-card">
+      <h3>1 Quarto</h3>
+      <div class="price-value">R$ 322.000</div>
+      <div class="price-note">A partir de · Foto Ilustrativa</div>
+      <div class="price-features">
+        <div class="pf">Varanda inclusa</div>
+        <div class="pf">Entrada parcelada</div>
+        <div class="pf">Financiamento via CAIXA</div>
+        <div class="pf">Uso do FGTS</div>
+      </div>
+      <button class="cta-price" onclick="document.getElementById('contato').scrollIntoView({behavior:'smooth'})">Simular Financiamento</button>
+    </div>
+    <div class="price-card featured">
+      <div class="featured-tag">Mais Procurado</div>
+      <h3>2 Quartos Padrão</h3>
+      <div class="price-value">R$ 368.500</div>
+      <div class="price-note">A partir de · Foto Ilustrativa</div>
+      <div class="price-features">
+        <div class="pf">Varanda inclusa</div>
+        <div class="pf">Entrada parcelada</div>
+        <div class="pf">Financiamento via CAIXA</div>
+        <div class="pf">Uso do FGTS</div>
+      </div>
+      <button class="cta-price" onclick="document.getElementById('contato').scrollIntoView({behavior:'smooth'})">Simular Financiamento</button>
+    </div>
+    <div class="price-card">
+      <h3>2 Quartos Suíte + Vaga</h3>
+      <div class="price-value">R$ 654.500</div>
+      <div class="price-note">A partir de · Foto Ilustrativa</div>
+      <div class="price-features">
+        <div class="pf">Suíte master</div>
+        <div class="pf">Vaga de garagem</div>
+        <div class="pf">Varanda inclusa</div>
+        <div class="pf">Entrada parcelada</div>
+      </div>
+      <button class="cta-price" onclick="document.getElementById('contato').scrollIntoView({behavior:'smooth'})">Simular Financiamento</button>
+    </div>
+    <div class="price-card">
+      <h3>3 Quartos Suíte + Vaga</h3>
+      <div class="price-value">R$ 795.500</div>
+      <div class="price-note">A partir de · Foto Ilustrativa</div>
+      <div class="price-features">
+        <div class="pf">Suíte master</div>
+        <div class="pf">Vaga de garagem</div>
+        <div class="pf">Varanda inclusa</div>
+        <div class="pf">Maior valorização</div>
+      </div>
+      <button class="cta-price" onclick="document.getElementById('contato').scrollIntoView({behavior:'smooth'})">Simular Financiamento</button>
+    </div>
+  </div>
+</section>
+
+<!-- PAGAMENTO -->
+<section class="payment">
+  <div class="section-label">Condições de Pagamento</div>
+  <h2>Feito para caber<br>no seu bolso</h2>
+  <div class="payment-grid fade-up">
+    <div class="pay-card">
+      <div class="pay-icon">💳</div>
+      <h4>Entrada Parcelada</h4>
+      <p>Facilitamos o sinal para que caiba no seu orçamento sem comprometer seu planejamento.</p>
+    </div>
+    <div class="pay-card">
+      <div class="pay-icon">🔑</div>
+      <h4>Carência de Financiamento</h4>
+      <p>Comece a pagar as parcelas do banco apenas após a entrega das chaves do seu apartamento.</p>
+    </div>
+    <div class="pay-card">
+      <div class="pay-icon">📈</div>
+      <h4>Uso do FGTS</h4>
+      <p>Utilize o saldo do seu FGTS para abater o valor do imóvel ou da entrada com segurança.</p>
+    </div>
+    <div class="pay-card">
+      <div class="pay-icon">📄</div>
+      <h4>Aprovação Facilitada</h4>
+      <p>Processo rápido e sem complicações, com suporte da Cury e da CAIXA Econômica Federal.</p>
+    </div>
+  </div>
+</section>
+
+<!-- NITERÓI -->
+<section class="niteroi">
+  <div class="section-label">Sobre a Cidade</div>
+  <div class="niteroi-inner fade-up">
+    <div class="niteroi-img"></div>
+    <div class="niteroi-text">
+      <h2>Niterói: beleza, segurança e qualidade de vida</h2>
+      <p>Constantemente na lista dos municípios com maior Índice de Desenvolvimento Humano (IDH) do país, Niterói reúne beleza, segurança e qualidade de vida na região metropolitana do Rio de Janeiro.</p>
+      <p>Com mais de 500 mil habitantes, a cidade se destaca pelas belas paisagens naturais, ótimas opções gastronômicas, diversas universidades e fácil acesso ao Rio de Janeiro através das Barcas e da Ponte Rio-Niterói.</p>
+      <p>O Centro vive um processo contínuo de revitalização urbana, com o Caminho Niemeyer como protagonista — tornando o Orla Central um investimento de alto potencial de valorização.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PERSPECTIVAS -->
+<section class="perspectivas" id="perspectivas">
+  <div class="section-label">Perspectivas</div>
+  <h2>Perspectivas e Imagens do Empreendimento</h2>
+  <div class="perspectives-grid fade-up">
+    <img src="IMG_5581.JPG" alt="">
+    <!-- Coloque as imagens IMG_5584.jpg até IMG_5615.jpg nesta pasta -->
+    <img src="IMG_5584.jpg" alt="">
+    <img src="IMG_5585.jpg" alt="">
+    <img src="IMG_5586.jpg" alt="">
+    <img src="IMG_5587.jpg" alt="">
+    <img src="IMG_5588.jpg" alt="">
+    <img src="IMG_5589.jpg" alt="">
+    <img src="IMG_5590.jpg" alt="">
+    <img src="IMG_5591.jpg" alt="">
+    <img src="IMG_5592.jpg" alt="">
+    <img src="IMG_5593.jpg" alt="">
+    <img src="IMG_5594.jpg" alt="">
+    <img src="IMG_5595.jpg" alt="">
+    <img src="IMG_5596.jpg" alt="">
+    <img src="IMG_5597.jpg" alt="">
+    <img src="IMG_5598.jpg" alt="">
+    <img src="IMG_5599.jpg" alt="">
+    <img src="IMG_5600.jpg" alt="">
+    <img src="IMG_5601.jpg" alt="">
+    <img src="IMG_5602.jpg" alt="">
+    <img src="IMG_5603.jpg" alt="">
+    <img src="IMG_5604.jpg" alt="">
+    <img src="IMG_5605.jpg" alt="">
+  </div>
+</section>
+
+<!-- CONTATO -->
+<section class="contact" id="contato">
+  <div class="section-label">Fale com um Corretor</div>
+  <div class="contact-grid">
+    <div class="contact-info fade-up">
+      <h2>Garanta sua unidade agora</h2>
+      <p>As melhores unidades — com vista para a Baía de Guanabara — são sempre as primeiras a esgotar. Fale com um corretor online agora mesmo e faça uma simulação de financiamento.</p>
+      <div class="contact-perks">
+        <div class="perk"><div class="perk-dot"></div><span>Atendimento online 100% digital</span></div>
+        <div class="perk"><div class="perk-dot"></div><span>Simulação de financiamento grátis</span></div>
+        <div class="perk"><div class="perk-dot"></div><span>Aprovação facilitada com a CAIXA</span></div>
+        <div class="perk"><div class="perk-dot"></div><span>Processo seguro com assinatura digital</span></div>
+        <div class="perk"><div class="perk-dot"></div><span>Uso do FGTS para compra</span></div>
+      </div>
+      <div style="margin-top:2.5rem; padding:1.5rem; border:1px solid rgba(201,168,76,0.2); border-left:3px solid var(--gold);">
+          <div style="font-size:0.75rem;color:rgba(255,255,255,0.4);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:0.5rem;">Contato Direto</div>
+          <div style="font-size:1rem;font-weight:700;">Augusto Seixas — Creci RJ 105921</div>
+          <div style="font-size:0.9rem;color:rgba(255,255,255,0.9);margin-top:0.25rem;font-weight:600;">Corretor Parceiro Cury Vendas</div>
+          <div style="font-size:0.85rem;color:rgba(255,255,255,0.5);margin-top:0.5rem;">augsutosseixas@gmail.com</div>
+          <div style="font-size:1rem;font-weight:600;margin-top:0.25rem;">📱 21 985653880</div>
+      </div>
+    </div>
+    <form class="fade-up" onsubmit="handleSubmit(event)">
+      <div class="form-row">
+        <input type="text" placeholder="Seu nome completo" required />
+        <input type="tel" placeholder="WhatsApp / Telefone" required />
+      </div>
+      <input type="email" placeholder="Seu melhor e-mail" required />
+      <select required>
+        <option value="" disabled selected>Tipologia de interesse</option>
+        <option>1 Quarto – R$ 322.000</option>
+        <option>2 Quartos Padrão – R$ 368.500</option>
+        <option>2 Quartos Suíte + Vaga – R$ 654.500</option>
+        <option>3 Quartos Suíte + Vaga – R$ 795.500</option>
+        <option>Tenho interesse, mas quero conhecer mais</option>
+      </select>
+      <select>
+        <option value="" disabled selected>Como prefere ser contatado?</option>
+        <option>WhatsApp</option>
+        <option>Ligação telefônica</option>
+        <option>E-mail</option>
+      </select>
+      <textarea placeholder="Mensagem opcional (ex: melhor horário para contato)"></textarea>
+      <button type="submit" class="submit-btn">Quero Ser Contactado Agora</button>
+      <p class="form-disclaimer">Ao enviar, você concorda em receber contato de nossos corretores. Nenhum pagamento é solicitado antecipadamente.</p>
+    </form>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div>
+      <div style="display:flex;align-items:center;gap:12px;">
+        <div class="footer-brand">ORLA CENTRAL <span>Niterói · RJ · Cury Construtora</span></div>
+        <img src="logojass.png" alt="Logo" style="height:48px;display:block;">
+      </div>
+    </div>
+    <div class="footer-links">
+      <div class="footer-col">
+        <h5>Empreendimento</h5>
+        <a href="#sobre">Sobre</a>
+        <a href="#localizacao">Localização</a>
+        <a href="#lazer">Lazer</a>
+        <a href="#plantas">Plantas</a>
+      </div>
+      <div class="footer-col">
+        <h5>Compra</h5>
+        <a href="#precos">Preços</a>
+        <a href="#contato">Fale com Corretor</a>
+        <a href="https://wa.me/5521985653880" target="_blank">WhatsApp</a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p class="footer-legal">
+      CCISA 115 INCORPORADORA LTDA. (ORLA CENTRAL). AUTOR DO PROJETO/PRPA: JOAQUIM ANDRADE NETO - CAU A62014.
+      As imagens são meramente ilustrativas e não representam necessariamente o produto final. Preços sujeitos a alteração sem aviso prévio.
+      Material publicitário de uso exclusivo de corretores credenciados.
+    </p>
+    <a href="https://wa.me/5521985653880?text=Olá!%20Tenho%20interesse%20no%20Orla%20Central%20em%20Niterói." target="_blank" class="footer-wa">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      Falar no WhatsApp
+    </a>
+  </div>
+</footer>
+
+<!-- STICKY WA -->
+<a class="sticky-wa" href="https://wa.me/5521985653880?text=Olá!%20Tenho%20interesse%20no%20Orla%20Central%20em%20Niterói." target="_blank">
+  <svg width="22" height="22" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  <span>Falar com Corretor</span>
+</a>
+
+<script>
+const plants = [
+  { type:'1 DORMITÓRIO', price:'R$ 322.000', specs:[
+    ['Dormitório','1 quarto'],['Varanda','Inclusa'],['Vaga','Não inclusa'],['Suíte','Não inclusa'],['Condições','Entrada parcelada']
+  ]},
+  { type:'2 DORMITÓRIOS PADRÃO', price:'R$ 368.500', specs:[
+    ['Dormitório','2 quartos'],['Varanda','Inclusa'],['Vaga','Não inclusa'],['Suíte','Não inclusa'],['Condições','Entrada parcelada']
+  ]},
+  { type:'2 DORMITÓRIOS SUÍTE + VAGA', price:'R$ 654.500', specs:[
+    ['Dormitório','2 quartos'],['Varanda','Inclusa'],['Vaga','1 vaga'],['Suíte','Master inclusa'],['Condições','Entrada parcelada']
+  ]},
+  { type:'3 DORMITÓRIOS SUÍTE + VAGA', price:'R$ 795.500', specs:[
+    ['Dormitório','3 quartos'],['Varanda','Inclusa'],['Vaga','1 vaga'],['Suíte','Master inclusa'],['Condições','Entrada parcelada']
+  ]}
+];
+
+function showPlant(i, btn) {
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  const p = plants[i];
+  document.getElementById('plant-type').textContent = p.type;
+  document.getElementById('plant-price').textContent = p.price;
+  const specs = document.getElementById('plant-specs');
+  specs.innerHTML = p.specs.map(s => `<div class="spec-row"><span>${s[0]}</span><span class="spec-val">${s[1]}</span></div>`).join('');
+}
+
+function handleSubmit(e) {
+  e.preventDefault();
+  const form = e.target;
+  const btn = form.querySelector('.submit-btn');
+  const name = (form.querySelector('input[type="text"]')?.value || '').trim();
+  const phone = (form.querySelector('input[type="tel"]')?.value || '').trim();
+  const email = (form.querySelector('input[type="email"]')?.value || '').trim();
+  const selects = form.querySelectorAll('select');
+  const tipologia = selects[0]?.value || '';
+  const contatoPref = selects[1]?.value || '';
+  const messageField = (form.querySelector('textarea')?.value || '').trim();
+
+  const parts = [];
+  if(name) parts.push('Nome: ' + name);
+  if(tipologia) parts.push('Interesse: ' + tipologia);
+  if(messageField) parts.push('Mensagem: ' + messageField);
+  if(phone) parts.push('Telefone: ' + phone);
+  if(email) parts.push('Email: ' + email);
+  if(contatoPref) parts.push('Preferência: ' + contatoPref);
+
+  const msg = 'Olá, tenho interesse no Orla Central — ' + parts.join(' | ');
+  const wa = '5521985653880';
+  const url = 'https://wa.me/' + wa + '?text=' + encodeURIComponent(msg);
+  window.open(url, '_blank');
+
+  if(btn){
+    btn.textContent = '✓ Abrindo WhatsApp...';
+    btn.style.background = '#2E7D5E';
+    btn.style.color = '#fff';
+    btn.disabled = true;
+  }
+}
+
+// Fade-up on scroll
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(en => { if(en.isIntersecting) en.target.classList.add('visible'); });
+}, { threshold: 0.12 });
+document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+// Carrossel de plantas: setas e navegação por teclado
+(function(){
+  const carousel = document.getElementById('plantsCarousel');
+  const btnLeft = document.querySelector('.carousel-arrow.left');
+  const btnRight = document.querySelector('.carousel-arrow.right');
+  if(!carousel || !btnLeft || !btnRight) return;
+  const getStep = () => {
+    const first = carousel.querySelector('img');
+    if(first) return Math.round(first.getBoundingClientRect().width * 0.9);
+    return Math.round(carousel.clientWidth * 0.7);
+  };
+  btnLeft.addEventListener('click', () => carousel.scrollBy({ left: -getStep(), behavior: 'smooth' }));
+  btnRight.addEventListener('click', () => carousel.scrollBy({ left: getStep(), behavior: 'smooth' }));
+  // keyboard
+  document.addEventListener('keydown', (e) => {
+    if(e.key === 'ArrowLeft') btnLeft.click();
+    if(e.key === 'ArrowRight') btnRight.click();
+  });
+})();
+</script>
+</body>
+</html>
