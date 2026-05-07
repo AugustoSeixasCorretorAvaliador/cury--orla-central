@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<!-- Google tag (gtag.js) -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-NRRT5F18BW"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -27,8 +29,6 @@
       'currency': 'BRL'
   });
 </script>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Orla Central – Niterói | Cury Construtora</title>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
@@ -61,6 +61,7 @@
     display: flex; align-items: center; justify-content: space-between;
     padding: 1rem 3rem;
     background: rgba(13,27,42,0.85);
+    -webkit-backdrop-filter: blur(12px);
     backdrop-filter: blur(12px);
     border-bottom: 1px solid rgba(201,168,76,0.2);
   }
@@ -296,7 +297,11 @@
     gap: 0.75rem;
     overflow-x: auto;
     padding: 0.75rem 0.25rem;
-    -webkit-overflow-scrolling: touch;
+    /* iOS Safari only: enable momentum scrolling */
+    @supports (-webkit-overflow-scrolling: touch) {
+      -webkit-overflow-scrolling: touch;
+    }
+    -webkit-scroll-snap-type: x mandatory;
     scroll-snap-type: x mandatory;
     margin-top: 1rem;
   }
@@ -933,10 +938,10 @@ src="https://www.facebook.com/tr?id=2815474178644026&ev=PageView&noscript=1"
       <input type="email" placeholder="Seu melhor e-mail" required />
       <select required>
         <option value="" disabled selected>Tipologia de interesse</option>
-        <option>1 Quarto – R$ 322.000</option>
-        <option>2 Quartos Padrão – R$ 368.500</option>
-        <option>2 Quartos Suíte + Vaga – R$ 654.500</option>
-        <option>3 Quartos Suíte + Vaga – R$ 795.500</option>
+        <option>1 Quarto - R$ 322.000</option>
+        <option>2 Quartos Padrão - R$ 368.500</option>
+        <option>2 Quartos Suíte + Vaga - R$ 654.500</option>
+        <option>3 Quartos Suíte + Vaga - R$ 795.500</option>
         <option>Tenho interesse, mas quero conhecer mais</option>
       </select>
       <select>
