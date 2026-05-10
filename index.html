@@ -84,7 +84,7 @@
       linear-gradient(to bottom, rgba(13,27,42,0.55) 0%, rgba(13,27,42,0.75) 60%, rgba(13,27,42,1) 100%),
       url('orla4.jpg') center/cover no-repeat;
     display: flex; flex-direction: column; justify-content: flex-end;
-    padding: 0 3rem 6rem;
+    padding: 5rem 3rem 6rem;
     position: relative;
   }
   .hero-badge {
@@ -537,11 +537,72 @@
   }
   .fade-up.visible { opacity: 1; transform: none; }
 
+
+
+  /* ── HERO LEAD BOX / CONVERSÃO ── */
+  .hero-lead-box {
+    margin: 0 0 2rem;
+    background: rgba(13,27,42,0.74);
+    border: 1px solid rgba(201,168,76,0.32);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    padding: 1.35rem;
+    max-width: 760px;
+    border-radius: 4px;
+    box-shadow: 0 18px 50px rgba(0,0,0,0.22);
+  }
+  .hero-lead-title {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--gold-light);
+    margin-bottom: 1rem;
+    letter-spacing: 0.02em;
+  }
+  .hero-mini-form {
+    display: grid;
+    grid-template-columns: 1fr 1fr auto;
+    gap: 0.75rem;
+  }
+  .hero-mini-form input {
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.16);
+    color: var(--white);
+    padding: 0.95rem 1rem;
+    font-size: 0.9rem;
+    border-radius: 2px;
+  }
+  .hero-mini-form input::placeholder { color: rgba(255,255,255,0.48); }
+  .hero-mini-form input:focus { border-color: var(--gold); outline: none; }
+  .hero-submit {
+    background: var(--gold);
+    color: var(--navy);
+    border: none;
+    padding: 0 1.45rem;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 800;
+    font-size: 0.82rem;
+    letter-spacing: 0.08em;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.15s;
+    white-space: nowrap;
+    border-radius: 2px;
+  }
+  .hero-submit:hover { background: var(--gold-light); transform: translateY(-1px); }
+  .hero-lead-note {
+    margin-top: 0.75rem;
+    font-size: 0.74rem;
+    line-height: 1.45;
+    color: rgba(255,255,255,0.48);
+  }
+
   @media (max-width: 768px) {
     nav { padding: 1rem 1.5rem; }
     section { padding: 4rem 1.5rem; }
-    .hero { padding: 0 1.5rem 4rem; }
-    .hero h1 { font-size: 2.8rem; }
+    .hero { padding: 4rem 1.5rem 4rem; }
+    .hero h1 { font-size: 2.35rem; }
+    .hero-lead-box { margin-bottom: 1.5rem; padding: 1rem; }
+    .hero-mini-form { grid-template-columns: 1fr; }
+    .hero-submit { height: 52px; }
     .about-grid, .location-grid, .plant-card, .niteroi-inner, .contact-grid { grid-template-columns: 1fr; gap: 2.5rem; }
     .about-img { aspect-ratio: 4/3; }
     .plants-tabs { overflow-x: auto; }
@@ -576,14 +637,14 @@ src="https://www.facebook.com/tr?id=2815474178644026&ev=PageView&noscript=1"
 <!-- NAV -->
 <nav>
   <div class="nav-logo">ORLA <span>Central · Niterói</span></div>
-  <a href="#contato" class="nav-cta">Falar com Corretor</a>
+  <a href="#contato" class="nav-cta">Receber Tabela</a>
 </nav>
 
 <!-- HERO -->
 <section class="hero">
-  <div class="hero-badge">Lançamento 2026 · Cury Construtora  -                                           👉  UNIDADES LIMITADAS COM VISTA MAR  🌊  E  PREÇOS DE 🚀 LANÇAMENTO - 🚨 OPORTUNIDADE 🚨 </div>
-  <h1>Orla<em>Central</em></h1>
-  <p class="hero-sub">Caminho Niemeyer · Centro de Niterói</p>
+  <div class="hero-badge">Pré-lançamento Cury 2026 · Caminho Niemeyer · Unidades limitadas com vista para a Baía 🌊</div>
+  <h1>Vista eterna para a Baía<em>a partir de R$ 322 mil</em></h1>
+  <p class="hero-sub" style="color: var(--white); font-weight: 700; margin-top: 1rem; margin-bottom: 1.25rem;">Orla Central · Centro de Niterói · Entrada facilitada · FGTS · Alto potencial de valorização</p>
   <div class="hero-pills">
     <div class="pill">1, 2 e 3 Quartos</div>
     <div class="pill">Varanda em Todos</div>
@@ -591,9 +652,20 @@ src="https://www.facebook.com/tr?id=2815474178644026&ev=PageView&noscript=1"
     <div class="pill">Vista para a Baía</div>
     <div class="pill">Barcas a 5 min</div>
   </div>
+
+  <div class="hero-lead-box fade-up">
+    <div class="hero-lead-title">📲 Receba tabela, plantas e condições de lançamento</div>
+    <form class="hero-mini-form" onsubmit="handleHeroLead(event)">
+      <input type="text" id="heroName" placeholder="Seu nome" autocomplete="name" required>
+      <input type="tel" id="heroPhone" placeholder="WhatsApp" autocomplete="tel" required>
+      <button type="submit" class="hero-submit">RECEBER AGORA</button>
+    </form>
+    <div class="hero-lead-note">Atendimento direto com corretor credenciado • Simulação sem compromisso • Nenhum pagamento é solicitado antecipadamente</div>
+  </div>
+
   <div class="hero-actions">
-    <a href="#contato" class="btn-primary">Quero Saber Mais</a>
-    <a href="https://wa.me/5521985653880?text=Olá!%20Tenho%20interesse%20no%20Orla%20Central%20em%20Niterói." target="_blank"  onclick="fbq('track','Lead'); gtag('event', 'conversion', {'send_to': 'AW-18071025476/NDl3CNL3pKkcEMTu96hD'});" class="btn-whatsapp">
+    <a href="#contato" class="btn-primary">Receber Tabela de Preços</a>
+    <a href="https://wa.me/5521985653880?text=Olá!%20Tenho%20interesse%20no%20Orla%20Central%20em%20Niterói.%20Gostaria%20de%20receber%20tabela,%20plantas%20e%20condições%20de%20lançamento." target="_blank"  onclick="fbq('track','Lead'); gtag('event', 'conversion', {'send_to': 'AW-18071025476/NDl3CNL3pKkcEMTu96hD'});" class="btn-whatsapp">
       <svg class="wa-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
       WhatsApp
     </a>
@@ -602,7 +674,7 @@ src="https://www.facebook.com/tr?id=2815474178644026&ev=PageView&noscript=1"
 
 <!-- URGENCY -->
 <div class="urgency-bar">
-  ⚠ Unidades com vista para a Baía são limitadas — Abertura de vendas: 05.05.2026
+  ⚠ Tabela de pré-lançamento · As unidades com melhor vista para a Baía costumam ser as primeiras consultas do lançamento
 </div>
 
 <!-- SOBRE -->
@@ -1077,6 +1149,42 @@ function handleSubmit(e) {
   } catch(err) {
     console.warn('fbq tracking error', err);
   }
+}
+
+
+function handleHeroLead(e) {
+  e.preventDefault();
+
+  const form = e.target;
+  const btn = form.querySelector('.hero-submit');
+  const name = (document.getElementById('heroName')?.value || '').trim();
+  const phone = (document.getElementById('heroPhone')?.value || '').trim();
+
+  const msg = `Olá! Tenho interesse no Orla Central em Niterói.\n\nNome: ${name}\nTelefone: ${phone}\n\nGostaria de receber:\n✅ tabela de preços\n✅ plantas\n✅ disponibilidade\n✅ condições de lançamento`;
+
+  try {
+    if (typeof fbq === 'function') {
+      fbq('track', 'Lead', {
+        content_name: 'Hero Lead Orla Central',
+        source: 'hero_form',
+        phone: phone || undefined
+      });
+    }
+    if (typeof gtag === 'function') {
+      gtag('event', 'conversion', {'send_to': 'AW-18071025476/NDl3CNL3pKkcEMTu96hD'});
+    }
+  } catch(err) {
+    console.warn('hero lead tracking error', err);
+  }
+
+  if (btn) {
+    btn.textContent = '✓ ABRINDO WHATSAPP...';
+    btn.style.background = '#2E7D5E';
+    btn.style.color = '#fff';
+    btn.disabled = true;
+  }
+
+  window.open('https://wa.me/5521985653880?text=' + encodeURIComponent(msg), '_blank');
 }
 
 // Fade-up on scroll
